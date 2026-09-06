@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Greiss's Special Adventure 🎂 RPG de Cumpleaños</title>
+    <!-- Google Fonts Pixel Art Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ================================================================= -->
+    <!-- 🔐 PANTALLA 1: CÓDIGO DE ACCESO SECRET PIN                       -->
+    <!-- ================================================================= -->
+    <div id="pinScreen" class="screen active">
+        <div class="pixel-card pin-card">
+            <div class="pin-icon">🔐</div>
+            <h2>Greiss's Secret Gift</h2>
+            <p class="pin-subtitle">Feliz cumpleaños Greiss, espero disfrute mi juego o la matooooo.</p>
+            <div class="pin-inputs">
+                <input type="password" maxlength="1" class="pin-digit" pattern="[0-9]*" inputmode="numeric" autofocus>
+                <input type="password" maxlength="1" class="pin-digit" pattern="[0-9]*" inputmode="numeric">
+                <input type="password" maxlength="1" class="pin-digit" pattern="[0-9]*" inputmode="numeric">
+                <input type="password" maxlength="1" class="pin-digit" pattern="[0-9]*" inputmode="numeric">
+            </div>
+            <div id="pinError" class="pin-error hidden">❌ Código incorrecto</div>
+            <button id="unlockBtn" class="pixel-btn">Desbloquear 💜</button>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 📜 PANTALLA 2: INTRODUCCIÓN A LA AVENTURA                         -->
+    <!-- ================================================================= -->
+    <div id="introScreen" class="screen">
+        <div class="pixel-card intro-card">
+            <div class="crown-icon">👑✨</div>
+            <h1 class="game-title">GREISS'S SPECIAL ADVENTURE</h1>
+            <p class="intro-age-tag">✨ ¡Felices 20 Años, Greiss! ✨</p>
+            <div class="intro-box">
+                <p>Hay <strong>12 Monedas Mágicas 🪙</strong> repartidas por este místico mundo de los BTGAY...</p>
+                <p>Tu misión es explorar todo el mapa, <strong>recolectar todas las monedas doradas 🪙</strong> para ver los mejores momentos de su vida (o sea conmigo muajajaja), hablar con los chicos de ITS y conseguir la Llave Dorada para abrir el <strong>Gran Cofre de Cumpleaños</strong>. 🎁</p>
+            </div>
+            <button id="startAdventureBtn" class="pixel-btn pulse">COMENZAR AVENTURA 🎮</button>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 🎮 PANTALLA 3: CONTENEDOR DEL JUEGO RPG                           -->
+    <!-- ================================================================= -->
+    <div id="gameScreen" class="screen">
+        <!-- HUD SUPERIOR -->
+        <header id="gameHUD">
+            <div class="hud-profile">
+                <div class="avatar-box">👗</div>
+                <div class="profile-info">
+                    <span class="profile-name" id="hudName">Greiss</span>
+                    <span class="profile-age" id="hudAge">20 Años 🎂</span>
+                </div>
+            </div>
+
+            <div class="hud-inventory">
+                <div class="inv-item" id="invCoins">
+                    <span>🪙 Monedas:</span>
+                    <strong id="coinCount">0/12</strong>
+                </div>
+                <div class="inv-item" id="invMemories">
+                    <span>💜 Recuerdos:</span>
+                    <strong id="memoryCount">0/4</strong>
+                </div>
+                <div class="inv-item hidden" id="invKey">
+                    <span>🔑 Llave obtenida</span>
+                </div>
+            </div>
+
+            <button id="soundToggleBtn" class="hud-btn" title="Activar/Desactivar sonido">🔊</button>
+        </header>
+
+        <!-- CANVAS DEL JUEGO CON DIMENSIONES POR DEFECTO MÍNIMAS DE SEGURIDAD -->
+        <main id="canvasContainer">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <!-- MENSAJE DE INTERACCIÓN PROXIMIDAD -->
+            <div id="interactPrompt" class="interact-prompt hidden">
+                <span class="prompt-icon">💡</span>
+                <span class="prompt-text">Presiona <strong>E</strong> o Toca para interactuar</span>
+            </div>
+        </main>
+
+        <!-- CONTROLES TÁCTILES MÓVILES -->
+        <div id="mobileControls">
+            <div class="dpad">
+                <button class="dpad-btn dpad-up" id="btnUp">▲</button>
+                <button class="dpad-btn dpad-left" id="btnLeft">◄</button>
+                <button class="dpad-btn dpad-right" id="btnRight">►</button>
+                <button class="dpad-btn dpad-down" id="btnDown">▼</button>
+            </div>
+            <button class="action-btn" id="btnInteract">🖐️ INTERACTUAR</button>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 📸 MODAL 1: VISOR DE RECUERDOS (FOTOGRAFÍAS / MEMES / DIÁLOGOS)   -->
+    <!-- ================================================================= -->
+    <div id="memoryModal" class="modal-overlay hidden">
+        <div class="pixel-card memory-card">
+            <button class="close-modal-btn" id="closeMemoryBtn">✖</button>
+            <div class="memory-badge" id="modalBadge">📸 RECUERDO DESBLOQUEADO</div>
+            <h3 id="modalTitle">Título del Recuerdo</h3>
+            <div class="memory-img-box">
+                <img id="modalImg" src="assets/images/foto1.jpg" alt="Foto Recuerdo">
+            </div>
+            <p id="modalText" class="memory-text">Descripción del recuerdo...</p>
+            <button id="saveMemoryBtn" class="pixel-btn">Guardar recuerdo 💜</button>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 💌 MODAL 2: CARTA FINAL DE CUMPLEAÑOS                           -->
+    <!-- ================================================================= -->
+    <div id="letterModal" class="modal-overlay hidden">
+        <div class="pixel-card letter-card">
+            <div class="letter-header">
+                <span class="letter-stamp">💌</span>
+                <h2>Mi hermosa carta para Greiss</h2>
+            </div>
+            <div class="letter-content" id="letterTextContainer">
+                <!-- Se inyecta dinámicamente el texto de FINAL_LETTER desde content.js -->
+            </div>
+            <div class="letter-footer">
+                <button id="continueToFinalBtn" class="pixel-btn">Continuar 💜</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!-- 🎉 PANTALLA 4: CELEBRACIÓN FINAL & CONFETI                        -->
+    <!-- ================================================================= -->
+    <div id="celebrationScreen" class="screen">
+        <canvas id="confettiCanvas"></canvas>
+        <div class="pixel-card celebration-card">
+            <div class="celebration-badge" id="celebBadge">✨ MISIÓN COMPLETADA ✨</div>
+            <h1 id="celebTitle">¡Feliz cumpleaños, Greiss! 💜</h1>
+            <h2 id="celebSub" class="sparkle-text">¡Felices 20! 🎂</h2>
+            <p id="celebMessage" class="celeb-body">Espero le haya gustado mi regalitooooooooo</p>
+            <p id="celebExtra" class="celeb-extra">¡Que tengas un día muy especial como tuuu! 🌟</p>
+            <button id="restartBtn" class="pixel-btn pulse">Jugar de nuevo 🔄</button>
+        </div>
+    </div>
+
+    <!-- CARGA DE SCRIPTS -->
+    <script src="js/content.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/pixelart.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
