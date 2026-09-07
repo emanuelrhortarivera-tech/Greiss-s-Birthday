@@ -20,7 +20,7 @@ const RECUERDOS_CONFIG = [
     {
         id: 1,
         titulo: "📸 Punto 1: Un Momento Inolvidable",
-        texto: "¡Felices 20 años, Greiss! Aqui esta una hermosa imagen de mi y nosotros en Punta Cana. Buenos tiempos inolvidables muaajajaja",
+        texto: "¡Felices 19 años, Greiss! Aqui esta una hermosa imagen de mi y nosotros en Punta Cana. Buenos tiempos inolvidables muaajajaja",
         imagen: "assets/images/foto1.jpeg",
         icono: "📸",
         misionTexto: "✨ Recuerdo 1 desbloqueado: ¡Juntaste tus primeras 3 Monedas Mágicas! 🪙"
@@ -28,7 +28,7 @@ const RECUERDOS_CONFIG = [
     {
         id: 2,
         titulo: "😂 Punto 2: Una foto random",
-        texto: "Cuando le tomaba fotos desprevenida, extraño sacarle las peores fotos del mundo sjjnsaf",
+        texto: "Cuando le tomaba fotos desprevenida, extraño sacarle las peores fotos del mundo sjjnsaf, aunque usted decia que todas las fotos que le tomaban quedaban mal >:(",
         imagen: "assets/images/foto2.jpeg",
         icono: "😂",
         misionTexto: "✨ Recuerdo 2 desbloqueado: ¡Juntaste 6 Monedas y abriste la caja de memes! 🪙"
@@ -54,10 +54,10 @@ const RECUERDOS_CONFIG = [
 // 🔴 CAMBIA AQUÍ LA CARTA FINAL DE CUMPLEAÑOS
 const FINAL_LETTER = `¡Querida Greiss! 💜
 
-¡Felices 20 años! 🎂✨
+¡Felices 19 años! 🎂✨
 
 Espero que puedas seguir cumpliendo muchos años más, que tenga salud, dinero y lo que mas le falta, amor. AJKSKASK mentiras. En este año espero cumpla sus metas y objetivos. Es una nueva decada de nuevas oportunidades, espero tambien que le vaya super en la carrera, sera tedioso pero nada en la vida es sencillo.
-Gracias por permitirme ser su amigo jsjs, aunque deberia agradecerme a mi por aguantarme su desprecio, nunca olvidare un año para un abrazo KASKD. Igual hay que vivir la vida como si cada dia fuera el ultimo. Ojala podamos compartir tambien mas momentos juntos, pero como nunca sale con nadota pues como que moriremos asi, tipo salidas tranqui, ir a meter tussi, volvernos locos, pero no, esas salidas son muy tranquis para la niña. Espero le haya gustado mi regalo, o sea esta hermosa pagina con su YoungCock y los BTSIDA, espero reconozca mi desvelada. 
+Gracias por permitirme ser su amigo jsjs, aunque deberia agradecerme a mi por aguantarme su desprecio, nunca olvidare un año para un abrazo KASKD. Igual hay que vivir la vida como si cada dia fuera el ultimo. Ojala podamos compartir tambien mas momentos juntos, pero como nunca sale con nadota pues como que moriremos asi, tipo salidas tranqui, ir a meter tussi, volvernos locos, pero no, esas salidas son muy tranquis para la niña. Espero le haya gustado mi regalo, o sea esta hermosa pagina con su YoungCock y los BTSIDA, espero reconozca mi desvelada :). 
 BYEE
 
 -Emanuel (El mas hermoso de Neiva) 💜✨`;
@@ -66,7 +66,7 @@ BYEE
 const FINAL_SCREEN_CONFIG = {
     tituloBadge: "✨ MISIÓN COMPLETADA ✨",
     tituloPrincipal: "¡Feliz cumpleaños, Greiss! 💜",
-    subtituloEdad: "¡Felices 20 años! 🎂✨",
+    subtituloEdad: "¡Felices 19 años! 🎂✨",
     mensajeFinal: "Espero le haya gustado mi regalitooooooooo",
     fraseExtra: "¡Que tengas un día muy especial como tuuu! 🌟",
     botonReiniciar: "Jugar de nuevo 🔄"
@@ -80,5 +80,5 @@ const BTS_NPCS_DIALOGS = [
     { name: "J-Hope 🐿️", text: "¡I'm your hope! ¡Sigue juntando monedas brillantes con mucha energía, Greiss! ✨" },
     { name: "Jimin 🐥", text: "¡Greiss! Cada moneda recolectada guardará un recuerdo hermoso de tu cumpleaños. 💜" },
     { name: "V 🐻", text: "¡Borahae Greiss! 💜 Las monedas doradas iluminan el camino hacia la carta final de cumpleaños." },
-    { name: "Jungkook 🐰", text: "¡Felices 20 Greiss! ¡Consigue las 12 monedas y abre el gran cofre mágico! Fighting! 💪💜" }
+    { name: "Jungkook 🐰", text: "¡Felices 19 Greiss! ¡Consigue las 12 monedas y abre el gran cofre mágico! Fighting! 💪💜" }
 ];
